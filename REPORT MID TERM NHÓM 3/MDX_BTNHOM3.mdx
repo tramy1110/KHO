@@ -1,0 +1,43 @@
+﻿--1,Sum profit and Sales by Category
+Select{[Measures].[Profit],[Sales]} on columns,
+non empty [Dim Products].[Category].members on rows 
+from [BT_NHOM_ETL_CUBE]
+--2. Sum Profit of Category
+Select [Measures].[Profit] on columns, 
+non empty [Dim Products].[Category].[Category] on rows
+from [BT_NHOM_ETL_CUBE]
+--3.Sum profit by Sub Category, sort DESC
+Select [Measures].[Profit] on columns, 
+non empty order ([Dim Products].[Sub Category].members, [Measures].[Profit], DESC) on rows
+from [BT_NHOM_ETL_CUBE]
+--4. Sum Sales of by Province in Quảng Trị 
+Select [Measures].[Sales] on columns, non empty [Dim Products].[Category].members on rows from [BT_NHOM_ETL_CUBE]
+where [Dim Location].[Province].&[Quảng Trị]
+--5. Sum Profit, sales by category and Sub Category in Province Quảng Trị 
+Select {[Measures].[Profit],[Sales]} on columns,
+non empty [Dim Products].[Category].[Category] * [Dim Products].[Sub Category].members on rows
+from [BT_NHOM_ETL_CUBE]
+where [Dim Location].[Province].&[Quảng Trị]
+--6. Sum profit by Category and Province of Order Year 2017
+Select [Measures].[Profit] on columns,
+non empty [Dim Products].[Category].[Category] * [Dim Location].[Province].members on rows 
+from [BT_NHOM_ETL_CUBE]
+where [Dim Time].[Order Year].[2017]
+--7 Total Sales of Category
+Select [Measures].[Sales] on columns,
+NONEMPTY ([Dim Products].[Category].[Category]) ON ROWS
+From [BT_NHOM_ETL_CUBE]
+--8 Total Sales By Region
+Select [Measures].[Sales] on columns,
+NONEMPTY ([Dim Location].[Region].[Region]) ON ROWS
+From [BT_NHOM_ETL_CUBE]
+-9 Total Sales by year
+Select [Measures].[Sales] on columns,
+NONEMPTY ([Dim Time].[Order Year].[Order Year]) ON ROWS
+From [BT_NHOM_ETL_CUBE]
+--10 Total Sales and Profit by Year
+Select { [Measures].[Sales],[Profit]} on columns,
+	NONEMPTY ([Dim Time].[Order Year].[Order Year]) ON rows
+From [BT_NHOM_ETL_CUBE]
+
+

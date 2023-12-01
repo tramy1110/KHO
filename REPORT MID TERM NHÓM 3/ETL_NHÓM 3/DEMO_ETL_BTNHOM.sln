@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "DEMO_ETL_BTNHOM", "DEMO_ETL_BTNHOM\DEMO_ETL_BTNHOM.dtproj", "{B7C1D09E-4AC6-4FCB-AA54-BC08EAE915D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7C1D09E-4AC6-4FCB-AA54-BC08EAE915D5}.Development|Default.ActiveCfg = Development
+		{B7C1D09E-4AC6-4FCB-AA54-BC08EAE915D5}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A67DC11-9FE7-450A-A448-D483683594AB}
+	EndGlobalSection
+EndGlobal
